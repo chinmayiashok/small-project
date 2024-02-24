@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicepage</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .nicepage{
+        display: flex;
+        gap: 500px;
+        position: relative;
+        top: 0;
+       border-bottom: 2px solid rgb(251, 247, 247);
+      min-width: 100vw;
+      padding: 10px;
+    }
+    .nicepage img{
+        margin-left: 20px;
+    }
+    .boxes img{
+      width: 50px;
+     height: 50px;
+    }
+    .boxes img:hover{
+        background-color: rgb(164, 164, 248);
+    }
+    
+    .hero{
+        position: relative;
+        background-color: rgb(88, 25, 236);
+        width: 100vw;
+        height: 700px;
+    }
+    .card1{
+        position: absolute;
+        top: 300px;
+        left: 200px;
+       
+    }
+    .card1 h2{
+    font-size: 30px   ;
+    color: chocolate;
+    } 
+    .card1 h3{
+    font-size: 170px;
+    color: rgb(244, 244, 250);
+    font-weight: bold;
+    
+    }
+    .card1::before{
+    content: "";
+    width: 20px;
+    height: 100px;
+    background-color: aliceblue;
+    position: absolute;
+    left: 600px;
+    top: 300px;
+    }
+    .card2 img{
+    position: absolute;
+    right: 250px;
+    bottom: 150px;
+    z-index: 1;
+    }
+    .card2::after{
+    content: "";
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    right: 250px;
+    bottom: 150px;
+    transform: rotate(45deg);
+    background-color: rgb(245, 241, 20);
+    }
+    .content{
+        /* position: relative; */
+        display: flex;
+        padding: 5%;
+        flex-wrap: wrap;
+    }
+    .box1{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 400px;
+    
+    }
+    .about-card{
+        width: 450px;
+    }
+    .card-header{
+        background-color: #000;
+       padding: 15% 10px;
+    }
+    .card-body{
+        padding: 20px;
+        font-size: 1.3rem;
+    }
+    .about-card h1{
+        color: #fff;
+    }
+    .box1 h1::before{
+        content: "";
+        width: 130px;
+        height: 15px;
+        background-color: rgb(250, 206, 7);
+        position: absolute;
+        top: -40px;
+        left: 0px;
+    }
+    .box1 h1{
+        font-size: 35px;
+       position: relative;
+    }
+    .box2{
+    flex: 1;
+    min-width: 400px;
+    }
+    .body{
+        position: relative;
+        min-width: 100vw;
+        height: 900px;
+        background-color: black;
+        top: 600px;
+        display: flex;
+        gap: 70px;
+    }
+    .body .steps{
+        position: absolute;
+        flex: 1;
+        left: 130px;
+        top: 120px;
+    }
+    .body .lap{
+        position: absolute;
+        flex: 2;
+        left: 560px;  
+        top: 210px;
+        z-index: 1;
+    }
+    .body .chair{
+        position: absolute;
+        flex: 1;
+         left: 1050px;
+        top: 120px;
+    }
+    .body .lap::after{
+        content: "";
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        left: -22px;
+        bottom: 20px;
+        transform: rotate(45deg);
+        background-color: rgb(245, 241, 20);
+        z-index: -1;
+        
+    }
+    .steps p{
+       font-size: 27px;
+        position: absolute;
+       bottom: -150px;
+       left: -30px;
+        color: #fff;
+    }
+    .steps h1{
+        position: absolute;
+        color: rgb(232, 179, 5);
+       font-size: 20px;
+         left: -40px;
+        bottom: -250px;
+    }
+     .chair p{
+        font-size: 16px;
+        font-weight: 300;
+        color: #fff;
+        text-align: right;
+        top: 400px;
+        right: 10px;
+        position: absolute;
+    } 
+    .chair p::before{
+        content: "";
+        width:15px;
+        height: 100px;
+        background-color: rgb(167, 18, 236);
+        position: absolute;
+      top: 100px;
+      left: -30px;
+        
+        }
+        .chair h3{
+            font-size: 15px;
+            padding: 10px;
+            position: absolute;
+            top: 500px;
+            right: 10px;
+            color: #fff;
+            text-align: right;
+        }
+        .track{
+            position: relative;
+            top: 500px;
+            min-width: 100vw;
+            height: 500px;
+            background-color: #fff;
+            
+        }
+        .paragraph p{
+        font-size: 18px;
+        position: absolute;
+        left: 150px;
+        top: 100px;
+        padding: 20px;
+        }
+        .approach{
+            width: 500px;
+            height: 250px;
+            background-color: blueviolet;
+            position: absolute;
+            left: 800px;
+            top: 90px;
+        }
+    
+     
+       .track .approach h1{
+             color: #faf8f8;
+             position: absolute;
+             left: 10px;
+             top: 120px;
+             font-size: 40px;
+        }
+        .approach::before{
+            content:"";
+            width: 150px;
+            height: 15px;
+            background-color: yellow;
+            position: absolute;
+            top: 80px;
+            left: 20px;
+        }
+        .approach p{
+             font-size: 25px;
+             font-weight: 600;
+             position: absolute;
+             top: 270px;
+             right: 30px;
+             text-align: right;
+        }
+        .brand{
+            min-width: 100vw;
+            height: 300px;
+            background-color: rgb(247, 179, 6);
+            position: relative;
+            top: 500px;
+        }
+        .brand i{
+            position: absolute;
+            font-size: 60px;
+            left: 120px;
+            top: 60px;
+        }
+        .strategy p{
+            position: absolute;
+            font-size: 15px;
+            left:70px;
+            top:180px;
+        }
+        .research h1{
+            position: absolute;
+            font-size: 20px;
+            font-weight: 600;
+            color: #121111;
+            left: 100px;
+            top: 130px;
+            flex: 1;
+        }
+        .research p{
+            position: absolute;
+            font-size: 15px;
+            left:460px;
+            top:180px;
+        }
+        .strategy h1{
+            position: absolute;
+            font-size: 20px;
+            font-weight: 600;
+            color: #121111;
+            left: 500px;
+            top: 130px;
+            flex: 1;
+        }
+        .strategy i{
+            position: absolute;
+            font-size: 60px;
+            left: 530px;
+            top: 60px;
+        }
+        .identity h1{
+            position: absolute;
+            font-size: 20px;
+            font-weight: 600;
+            color: #121111;
+            left: 1000px;
+            top: 130px;
+        }
+    .identity i{
+        position: absolute;
+        font-size: 60px;
+        left: 1050px;
+        top: 60px;
+    }
+    .identity p{
+        position: absolute;
+        font-size: 15px;
+        left:940px;
+        top:180px;
+    }
+    .section{
+    min-width: 100vw;
+    height: 800px;
+    background-color: rgb(243, 228, 228);
+    position: relative;
+    top: 500px;
+    }
+    .image img{
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    }
+    .blur img{
+        position: absolute;
+        top: 150px;
+        left: 650px;
+    }
+    .page{
+        width: 350px;
+        height: 600px;
+        background-color: blueviolet;
+        right: 210px;
+        top: 100px;
+        position: absolute;
+    }
+    .page p{
+         left: 60px;
+         font-size: 20px;
+        color: #fff;
+        top: 150px;
+        position: absolute;
+    }
+    .page::after{
+        content: "";
+        width: 15px;
+        height: 170px;
+        background-color: yellow;
+        position: absolute;
+        top: 150px;
+        left: 30px;
+    }
+    .blur p{
+        font-size: 35px;
+        color: black;
+        position: absolute;
+      bottom: 170px;
+      left: 610px;
+    }
+    .end{
+        position: relative;
+        top:500px;
+        min-width: 100vw;
+        height: 300px;
+        background-color: #ea1515;
+    }
+    .work{
+        flex: 1;
+        background-color: #030303;
+        position: absolute;
+        width: 800px;
+        height: 300px;
+    }
+    .test{
+        flex: 1;
+        background-color: rgb(241, 187, 12);
+        position: absolute;
+        width: 800px;
+        left:800px;
+        height: 300px;
+    }
+    .work h1{
+        font-size: 33px;
+        position: absolute;
+        top: 100px;
+        color: #f3eaea;
+        left: 130px;
+    }
+    .work h3{
+      font-size: 15px;
+      position: absolute;
+      top: 170px;
+      color: #f3eaea;
+      left: 130px;
+    }
+    .work::after{
+        content: "";
+        width: 70px;
+        height: 15px;
+        background-color: rgb(103, 4, 232);
+        position: absolute;
+        top: 200px;
+        left: 130px;
+    }
+    .test h1{
+        font-size: 33px;
+        position: absolute;
+        top: 100px;
+        color: #121212;
+        left: 130px;
+    }
+    .test h3{
+      font-size: 15px;
+      position: absolute;
+      top: 170px;
+      color: #0c0c0c;
+      left: 130px;
+    }
+    .test::after{
+        content: "";
+        width: 70px;
+        height: 15px;
+        background-color: rgb(103, 4, 232);
+        position: absolute;
+        top: 200px;
+        left: 130px;
+    }
+    .footer{
+        min-width: 100vw;
+        height: 800px;
+        position: relative;
+        background-color: blueviolet;
+        display: flex;
+        top: 500px;
+    }
+    .teach img{
+        position: absolute;
+        top:100px;
+        left: 300px;
+        z-index: 1;
+    }
+    .teach::after{
+        content: "";
+        width: 400px;
+        height: 400px;
+        transform: rotate(45deg);
+        background-color: yellow;
+        position: absolute;
+        left: 300px;
+        top: 130px;
+    }
+    .contact h1{
+        color: #fff;
+        right: 240px;
+        top: 30px;
+        position: absolute;
+    }
+    .contact h2{
+        color: #e3eb12;
+        right: 240px;
+        top: 110px;
+        position: absolute;
+    }
+    .contact p{
+        color: #fff;
+        right: 240px;
+        top: 150px;
+        font-size: 15px;
+        text-align: right;
+        position: absolute;
+    }
+    .contact h5{
+        color: #f0ec11;
+        right: 240px;
+        top: 250px;
+        font-size: 20px;
+        position: absolute;
+    }
+    .contact address{
+        color: #fff;
+        right: 240px;
+        top: 300px;
+        align-items: right;
+        position: absolute;
+    }
+    .contact i{
+        font-size: 30px;
+        position: relative;
+        top:400px;
+        left: 1100px;
+       padding: 10px;
+    }
+    .contact b{
+        position: absolute;
+        top: 500px;
+        font-size: 40px;
+        color: #fff;
+        right: 100px;
+        align-items: right;
+    }
+    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <section class="nicepage">
+            <img alt="NicePage.com" src="//csite.nicepage.com/Images/logo-w.png">
+            <div class="boxes">
+            <img alt="Responsive Tablet Mode" src="//csite.nicepage.com/Images/Site/responsive-tablet.png">
+            <img alt="Responsive Phone Horizontal Mode" src="//csite.nicepage.com/Images/Site/responsive-phone-horizontal.png">
+            <img alt="Responsive Phone Mode" src="//csite.nicepage.com/Images/Site/responsive-phone.png">
+        </div>
+        </section>
+    </header>
+   <section class="hero">
+    <div class="card1">
+        <h2>BRANDING AGENCY</h2>
+      <h3>Ideas.</h3>
+    </div>
+    <div class="card2">
+        <img src="https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/d6d7da33aa205fcd80727e1b/Untitled1.png" width="400" height="400">
+        
+
+        
+    </div>
+   </section>
+   <section class="content">
+    <div class="box1">
+        <h1>About Us</h1>
+        <h4>Strategy, design and digital to build  <br>brands people love.</h4>
+    </div>
+    <div class="box2">
+        <p>Since 2005,  has partnered with hot startups and global companies to <br>elevate the game, create brand disruption and drive real business <br> results. Recently, we gave the makers of Ice Age a new social voice, <br> created a radical Super campaign, built an explosive new digital brand for  <br>USA Today, rebranded a $2B media giant and launched a pop-tart <br> challenger. Our efforts have led our clients to reduce competitive <br> pressures, gain market share and quadruple revenue. We study your <br> company, focus on success metrics such as financial goals and where the  <br>business needs to go as a result of us working together.</p>
+       <h1>read more</h1>
+    </div>
+   </section>
+   <section class="body">
+    <div class="steps">
+        <img src="//images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/d49bf7855f8f516d9a317fe0/pexelsphoto929280.jpeg" alt="" class="u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-image u-image-default u-image-1" width="300" height="350" >
+        <p>A holistic, 360º  approach to  
+            help you make the most of  your brand.</p>
+        <h1>WE WANT TO BE  <br>THAT COMPANY.</h1>
+    </div>
+    <div class="lap">
+        <img class="u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-image u-image-3" src="//images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/978151d6d8455739af2e5979/pexelsphoto699459.jpeg" width="350" height=450">
+    </div>
+    <div class="chair">
+        <img src="//images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/8caa6a964340510f84929ec3/pexelsphoto1005644.jpeg" alt="" class="u-image u-image-default u-image-4" width="300" height="350">
+        <p>We art direct and produce photoshoots, <br> video projects, and marketing materials  <br>
+            to fully realize your brand.</p>
+        <h3>We design immersive interiors and <br> physical office or retail spaces that <br> support your unique brand experience.</h3>
+    </div>
+   </section>
+   <section class="track">
+    <div class="paragraph">
+        <p>You interact with all sorts of businesses every day. More often than <br>not, the relationship and service you receive is less than stellar. But <br>every now and then, you meet a company that stands out. Sees things <br> differently. Ignites you. <br>
+            <br>
+            Gets you. Inspires you to do better. We want to be that <br> company.Knowing the expectation of every client that walks through <br> our doors is extremely high, we never stop striving to be the best in  <br>our field. That’s why everything we do is based on four guiding <br> fundamentals.</p>
+    </div>
+    <div class="approach">
+        <h1>Our Approach</h1>
+        <p>A proven track record of successful client <br> relationships.</p>
+    </div>
+   </section>
+   <section class="brand">
+    <i class="fa fa-book"></i>
+    <div class="research">
+        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512.001"><use xlink:href="#svg-38e9"></use></svg>
+
+        <h1>RESEARCH</h1>
+        <p>We get inside the heads and hearts of  <br>your target audience and study market <br> dynamics.</p>
+    </div>
+    <div class="strategy">
+        <i class="fa fa-home"></i>
+        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512"><use xlink:href="#svg-49f9"></use></svg>
+        <h1>BRAND STRATEGY</h1>
+
+        <p>We provide a compass and strategically  <br>position your brand within a unique <br> whitespace.</p>
+    </div>
+    <div class="identity">
+        <i class="fa fa-search"></i>
+        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 480 480"><use xlink:href="#svg-acd8"></use></svg>
+        <h1>VISUAL IDENTITY</h1>
+        <p>We design iconic logos and visual <br>identities that cut through the noise and <br> express who you are.</p>
+    </div>
+
+   </section>
+   <section class="section">
+    <div class="image">
+        <img src="" alt="">
+    </div>
+    <div class="blur">
+        <img src="//images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/a94f671ef72957cea0664564/pexelsphoto859264.jpeg" alt="" class="u-image u-image-default u-image-2" data-image-width="1125" data-image-height="750">
+    </div>
+    <div class="paragraph"></div>
+   </section>
+</body>
+</html>
+</section>
+<section class="section">
+ <div class="image">
+     <img src="./Assets/laptop.avif" alt="image" width="350px" height="600px">
+ </div>
+ <div class="blur">
+     <img src="//images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/a94f671ef72957cea0664564/pexelsphoto859264.jpeg" alt="" class="u-image u-image-default u-image-2" width="300" height="300">
+     <p>Strategy, design <br>and digital to build <br>brands people love.</p>
+ </div>
+ <div class="page">
+     <p>Knowing the expectation of every client that <br>walks through our doors is extremely high, we <br>never stop striving to be the best in our field.</p>
+ </div>
+</section>
+<section class="end">
+ <div class="work">
+     <h1>Work With Us</h1>
+     <h3>Start now</h3>
+
+ </div>
+ <div class="test">
+     <h1>Testimonials</h1>
+     <h3>read more</h3>
+ </div>
+</section>
+<div class="footer">
+ <div class="teach">
+     <img class="u-image u-image-2" src="//images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/30b14173672a52d49a33236a/pexelsphoto1181622.jpeg" width="400" height="450">
+ </div>
+ <div class="contact">
+     <h1>Contact Us</h1>
+     <h2>NEW YORK</h2>
+     <p>200 Broadway <br>NEW YORK, NY 10038</p>
+     <h5>DALLEYS</h5>
+     <br>
+     <address>#919 Commerce Street <br>
+     Dalles TX 75226</address>
+     <i class="fa-brands fa-facebook"></i>
+     <i class="fa-brands fa-twitter"></i>
+     <i class="fa-brands fa-instagram"></i>
+     <i class="fa-brands fa-p"></i>
+     <i class="fa-brands fa-@"></i>
+     <b>WE MAKE THE  <br>COMPLEX, SIMPLE.</b>
+ </div>
+ 
+</div>
+</body>
+</html>
